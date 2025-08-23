@@ -11,7 +11,6 @@ The backend is a **RESTful API** with database support, and the frontend is buil
 ## Tech Stack
 ### Frontend
 - React
-- Axios
 ### Backend
 - Node.js
 - Express
