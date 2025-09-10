@@ -3,8 +3,8 @@ import Footer from './components/Footer'
 import Notification from './components/Notification'
 import Note from './components/Note'
 import LoginForm from './components/LoginForm'
-import NoteForm from "./components/NoteForm.jsx"
-import Togglable from "./components/Togglable.jsx"
+import NoteForm from './components/NoteForm.jsx'
+import Togglable from './components/Togglable.jsx'
 import noteService from './services/notes'
 import loginService from './services/login'
 
@@ -124,15 +124,14 @@ const App = () => {
         </button>
       </div>
       <ul>
-        {notesToShow.map(note => 
-          <Note 
-            key={note.id} 
-            note={note} 
+        {notesToShow.map(note =>
+          <Note
+            key={note.id}
+            note={note}
             toggleImportance={() => toggleImportanceOf(note.id)}
           />
         )}
       </ul>
-      
       <Footer />
     </div>
   )
