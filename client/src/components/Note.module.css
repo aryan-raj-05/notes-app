@@ -1,0 +1,16 @@
+.note {
+  list-style: none;
+  width: 65%;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.btn {
+  margin-left: 2px;
+  padding: 2px;
+  background-color: lightcoral;
+}
