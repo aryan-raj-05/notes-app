@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+button {
+  padding: 3px;
+  border-radius: 10px;
+}

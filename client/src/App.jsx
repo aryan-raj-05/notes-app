@@ -7,6 +7,7 @@ import NoteForm from './components/NoteForm.jsx'
 import Togglable from './components/Togglable.jsx'
 import noteService from './services/notes'
 import loginService from './services/login'
+import styles from './App.module.css'
 
 const App = () => {
   const [notes, setNotes] = useState([])
@@ -107,22 +108,27 @@ const App = () => {
 
   return (
     <div>
-      <h1>Notes</h1>
-      <Notification message={errorMessage} />
+      <div className={styles.header}>
+        <div className={styles.container}>
+          <h1 className={styles.heading}>Notes</h1>
+          <Notification message={errorMessage} />
 
-      {!user && loginForm()}
-      {user && (
-        <div>
-          <p>{user.name} logged in</p>
-          {noteForm()}
+          {!user && loginForm()}
+          {user && (
+            <>
+              <p>{user.name} logged in</p>
+              <div>{noteForm()}</div>
+            </>
+          )}
+
+          <div>
+            <button onClick={() => setShowAll(!showAll)}>
+              show {showAll ? 'important' : 'all'}
+            </button>
+          </div>
         </div>
-      )}
-
-      <div>
-        <button onClick={() => setShowAll(!showAll)}>
-          show {showAll ? 'important' : 'all'}
-        </button>
       </div>
+
       <ul>
         {notesToShow.map(note =>
           <Note
